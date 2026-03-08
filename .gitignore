@@ -1,0 +1,23 @@
+# Python caching and portable environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+python-3.10.11/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Note: We are explicitly tracking training/models/ since the .tflite model is small

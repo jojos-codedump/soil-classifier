@@ -1,0 +1,14 @@
+# Ignore large directories and unnecessary files
+python-3.10.11/
+.git/
+__pycache__/
+*.pyc
+
+# Ignore testing datasets
+training/cleaning/
+analyze_dataset.py
+diagnose.py
+*.ipynb
+
+# Jupyter checkpoint system
+.ipynb_checkpoints/

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  soil-classifier:
+    build: .
+    container_name: soil-inference-app
+    environment:
+      - AM_I_IN_A_DOCKER_CONTAINER=1
+    # We must pass the camera device to the container for live OpenCV inference
+    devices:
+      - /dev/video0:/dev/video0
+    # X11 Forwarding support for OpenCV UI windows on Linux hosts if needed
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+      - AM_I_IN_A_DOCKER_CONTAINER=1
+    # Allows Ctrl+C to stop it gracefully
+    tty: true
+    stdin_open: true

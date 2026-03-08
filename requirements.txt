@@ -1,0 +1,43 @@
+# =============================================================================
+# Soil Image Classification - Requirements
+# Python 3.10 | Windows | TensorFlow GPU Compatible
+# =============================================================================
+
+# --- Deep Learning Framework ---
+# TF 2.10 is the LAST version with native Windows GPU support (CUDA 11.2 / cuDNN 8.1).
+# TF 2.11+ requires WSL2 for GPU on Windows.
+tensorflow==2.10.1
+
+# --- Core Scientific Stack ---
+# numpy < 1.24 required: TF 2.10 breaks on numpy 1.24+ (removed deprecated np.bool, np.int, etc.)
+numpy==1.23.5
+# scipy 1.11.x is the last line supporting Python 3.10 well with TF 2.10
+scipy==1.11.4
+
+# --- Image Processing ---
+# Pillow for image loading/augmentation; 9.5.x is stable with TF 2.10
+Pillow==9.5.0
+# OpenCV for advanced image preprocessing (resize, color conversion, augmentations)
+opencv-python==4.8.1.78
+
+# --- Data Handling & Visualization ---
+# pandas for data/label management, metric logging
+pandas==2.0.3
+# matplotlib for training curves, confusion matrices, sample visualization
+matplotlib==3.7.5
+# seaborn for heatmaps and prettier statistical plots
+seaborn==0.13.2
+
+# --- Machine Learning Utilities ---
+# scikit-learn for train/val/test splits, classification reports, confusion matrices
+scikit-learn==1.3.2
+
+# --- Training Utilities ---
+# tqdm for progress bars during custom training loops or data preprocessing
+tqdm==4.66.1
+# h5py for saving/loading Keras model weights in HDF5 format
+h5py==3.10.0
+
+# --- Serialization ---
+# protobuf pinned to avoid TF 2.10 compatibility issues (TF 2.10 needs protobuf < 4)
+protobuf==3.19.6
